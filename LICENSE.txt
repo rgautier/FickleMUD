@@ -1,3 +1,13 @@
+FickleMUD has been created as a Fork of RanvierMUD 
+and is a derivative work of that project in that it utilized that
+project as a skeleton on which to build.  In keeping with the spirit
+of the original license, the same license shall apply to FickleMUD, with
+the addition of the following Copyright line:
+
+Copyright (c) 2012 Rich Gautier aka Fickle, http://www.richgautier.com
+
+Attached is the original LICENSE.txt statement from that project
+------------------------------------------------------------------
 Copyright (c) 2012 Shawn Biddle, http://shawnbiddle.com/
 
 Permission is hereby granted, free of charge, to any person obtaining
