@@ -13,35 +13,37 @@
 
 
     // built-ins
-var net = require('net'),
-    util = require('util'),
-    express = require('express'),
+	var net = require('net'),
+	util = require('util'),
+	express = require('express'),
 
     // local
-    Commands = require('./src/commands').Commands,
-    Rooms    = require('./src/rooms').Rooms,
-    Npcs     = require('./src/npcs').Npcs,
-    Items    = require('./src/items').Items,
-    Data     = require('./src/data').Data,
-    Events   = require('./src/events').Events,
+    	Commands = require('./src/commands').Commands,
+    	Rooms    = require('./src/rooms').Rooms,
+    	Npcs     = require('./src/npcs').Npcs,
+    	Items    = require('./src/items').Items,
+    	Data     = require('./src/data').Data,
+    	Events   = require('./src/events').Events,
 	Plugins  = require('./src/plugins'),
-    PlayerManager = require('./src/player_manager').PlayerManager,
+    	PlayerManager = require('./src/player_manager').PlayerManager,
 
     // third party
-    Localize  = require('localize'),
-    argv = require('optimist').argv,
-    telnet = require('./src/3rdparty/telnet.js');
+    	Localize  = require('localize'),
+    	argv = require('optimist').argv,
+    	telnet = require('./src/3rdparty/telnet.js');
 
 /**
  * These aren't really globals, they're only "global" to this file,
  * we'll pass them around via construction as needed
  */
 	// cmdline options
-var locale  = argv.locale || 'en',
+	var locale  = argv.locale || 'en',
 	port    = argv.port || 23,
-    verbose = !!argv.v,
-	save_interval    = isNaN(parseInt(argv.save, 10)) ? 10 : parseInt(argv.save, 10), // number of minutes between autosave ticks
-	respawn_interval = isNaN(parseInt(argv.respawn, 10)) ? 20 : parseInt(argv.respawn, 10), // "" between respawn tickets
+    	verbose = !!argv.v,
+	save_interval    = isNaN(parseInt(argv.save, 10)) ? 10 : parseInt(argv.save, 10), 
+		// number of minutes between autosave ticks
+	respawn_interval = isNaN(parseInt(argv.respawn, 10)) ? 20 : parseInt(argv.respawn, 10), 
+		// number of minutes between respawn tickets
 
 	//storage of main game entities
 	players,
@@ -231,7 +233,8 @@ var server_commands = {
 				players.each(function(p) {p.prompt();});
 			};
 			warn(time / 1000 + " seconds");
-			setTimeout(function () { warn(Math.floor((time / 4) / 1000) + " seconds"); }, time - Math.floor(time / 4));
+			setTimeout(function () { warn(Math.floor((time / 4) / 1000) + " seconds"); }, 
+						time - Math.floor(time / 4));
 		}
 
 		util.log("HOTBOOTING SERVER" + (time ? " IN " + (time / 1000) + " SECONDS " : ''));
@@ -262,7 +265,8 @@ var server_commands = {
 				players.each(function(p) {p.prompt();});
 			};
 			warn(time / 1000 + " seconds");
-			setTimeout(function () { warn(Math.floor((time / 4) / 1000) + " seconds"); }, time - Math.floor(time / 4));
+			setTimeout(function () { warn(Math.floor((time / 4) / 1000) + " seconds"); }, 
+						time - Math.floor(time / 4));
 		}
 
 		util.log("RESTARTING SERVER" + (time ? " IN " + (time / 1000) + " SECONDS " : ''));
