@@ -37,8 +37,9 @@
  * we'll pass them around via construction as needed
  */
 	// cmdline options
+	// 11 May 2012 RAG Change default port to 6889
 	var locale  = argv.locale || 'en',
-	port    = argv.port || 23,
+	port    = argv.port || 6889,
     	verbose = !!argv.v,
 	save_interval    = isNaN(parseInt(argv.save, 10)) ? 10 : parseInt(argv.save, 10), 
 		// number of minutes between autosave ticks
