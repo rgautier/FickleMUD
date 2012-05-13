@@ -5,3 +5,7 @@
                      |  \| | | |  | |-' |   | |   | |  /
                      o   o o-o  o-o o-o o   o  o-o  o-o
 
+Using NodeMUD (Ranvier MUD) as a skeleton, Fickle is analyzing the code
+to learn more about Node, and the Node server programming architecture.  Since
+this is a project in progress, expect change.  Expect change often.  Expect 
+downtime, crashes and even occasional cursing and gnashing of teeth.

@@ -61,10 +61,13 @@
 /**
  * Do the dirty work
  */
+//This defines the function that we will use to start the server. 
 var init = function (restart_server)
 {
-	util.log("START - Loading entities");
+	//Logging needs to include application name for log management
+        util.log("FickleMud - START - Loading entities");
 	players = new PlayerManager([]);
+        //If restart_server is undefined - make it true - otherwise keep its value
 	restart_server = typeof restart_server === 'undefined' ? true : restart_server;
 
 	Commands.configure({
@@ -109,14 +112,15 @@ var init = function (restart_server)
 		// start the server
 		server.listen(port);
 
-
 		// save every 10 minutes
-		util.log("Setting autosave to " + save_interval + " minutes.");
+		util.log("FickleMud - Setting autosave to " + save_interval + " minutes.");
 		clearInterval(saveint);
 		var saveint = setInterval(save, save_interval * 60000);
 
 		// respawn every 20 minutes, probably a better way to do this
-		util.log("Setting respawn to " + respawn_interval + " minutes.");
+                // We should find some way to randomize respawn, set respawn rate based on
+                // server population as well.
+		util.log("FickleMud - Setting respawn to " + respawn_interval + " minutes.");
 		clearInterval(respawnint);
 		var respawnint = setInterval(load, respawn_interval * 60000);
 
@@ -143,6 +147,7 @@ var init = function (restart_server)
 
 
 // START IT UP!
+//Run the function we defined above
 init();
 
 
